@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Anuphan:wght@100..700&display=swap');
+
+html,body{
+
+    margin: 0;
+    padding: 0;
+    width: 90vw;
+    height: 90vw;
+    font-family: "Anuphan", sans-serif;
+}
+
+#board{
+
+    display:flex;
+    gap: 16px;
+    padding: 1px 48px;
+    width: 100%;
+    height: 100%;
+
+}
+
+
+.lane{
+    border: solid rgb(88, 88, 88);
+    flex-basis: 1;
+    flex-shrink: 0;
+    flex-grow: 1;
+    border-radius: 8px;
+}
+
+.card{
+    font-family: "Anuphan", sans-serif;
+    padding: 16px;
+    border-radius: 8px;
+    font-weight: bold;
+    color: white;
+    display: flex;
+    border: solid rgb(255, 255, 255);
+    .spawn & {
+        background-color: rgb(91, 91, 91);
+    }
+    .todo & {
+        background-color: rgb(255, 119, 109);
+    }
+    .inprog & {
+        background-color: rgb(255, 191, 0);
+    }
+    .done & {
+        background-color: rgb(135, 191, 5);
+    }
+}
+.card:hover{
+    
+    transition: transform 0.5s;
+    transform: scale(1.1);
+    .spawn & {
+        background-color: rgb(91, 91, 91);
+        animation: colorblack 1s infinite;
+    }
+    .todo & {
+        background-color: rgb(255, 119, 109);
+        animation: colorred 1s infinite;
+    }
+    .inprog & {
+        background-color: rgb(255, 191, 0);
+        animation: coloryellow 1s infinite;
+    }
+    .done & {
+        background-color: rgb(135, 191, 5);
+        animation: colorgreen 1s infinite;
+    }
+    
+}
+
+.btn{
+    animation: color 1s infinite;
+    display: flex;
+    font-family: "Anuphan", sans-serif;
+    font-optical-sizing: auto;
+    font-size: 25px;
+    padding: 15px 32px;
+    margin: 4px 6px;
+}
+
+.delete-btn{
+    border: solid rgb(255, 255, 255);
+    color: white;
+    font-weight: bold;
+    background-color: rgba(255, 255, 255, 0);
+    font-family: "Anuphan", sans-serif;
+    font-size: 16px;
+    border-radius: 8px;
+    margin-left: auto;
+    
+}
+
+.btn:hover{
+    transition: transform 0.5s;
+    transform: scale(1.1);
+    border-radius: 8px;
+    color: white;
+    background-color: rgba(183, 183, 183, 0);
+}
+
+@keyframes colorred{
+    0%   {background: rgba(255, 119, 109);}
+    50% {background: rgb(255, 0, 0);}
+    100% {background: rgba(255, 119, 109);}
+  }
+
+  @keyframes colorblack{
+    0%   {background: rgba(91, 91, 91);}
+    50% {background: rgb(39, 39, 39);}
+    100% {background: rgba(91, 91, 91);}
+  }
+
+  @keyframes coloryellow{
+    0%   {background: rgba(255, 191, 0);}
+    50% {background: rgb(255, 149, 0);}
+    100% {background: rgba(255, 191, 0);}
+  }
+
+  @keyframes colorgreen{
+    0%   {background: rgba(135, 191, 5);}
+    50% {background: rgb(103, 159, 7);}
+    100% {background: rgba(135, 191, 5);}
+  }
+
+  @keyframes color{
+    100%,0%{
+        background-color: rgb(255, 0, 0);
+    }
+    8%{
+        background-color: rgb(255, 128, 0);
+    }
+    16%{
+        background-color: rgb(255,255,0);
+    }
+    25%{
+        background-color: rgb(127,255,0);
+    }
+    33%{
+        background-color: rgb(0,255,0);
+    }
+    41%{
+        background-color: rgb(0,255,127);
+    }
+    50%{
+        background-color: rgb(0,255,255);
+    }
+    58%{
+        background-color: rgb(0,127,255);
+    }
+    66%{
+        background-color: rgb(0,0,255);
+    }
+    75%{
+        background-color: rgb(127,0,255);
+    }
+    83%{
+        background-color: rgb(255,0,255);
+    }
+    91%{
+        background-color: rgb(255,0,127);
+  }
+  }
